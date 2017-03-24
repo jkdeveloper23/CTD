@@ -1,4 +1,4 @@
-#Lol surrender emulator beta 25wt45
+#Lol surrender emulator beta 25wt4f5
 surrender = [0, 0, 0, 1, 1]
 yes= 0
 
