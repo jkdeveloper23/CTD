@@ -1,5 +1,5 @@
 #Lol surrender emulator beta 25wt4f5
-surrender = [0, 0, 0, 1, 1]
+surrender = []
 yes= 0
 
 no= surrender.count(0)
@@ -11,3 +11,5 @@ if no < 2 and yes >= 3:
 	print("Surrender with {} yes and {} no ".format(yes, no))
 else:
 	print("continue playing")
+
+print("Yes= {} and no= {}".format(yes,no))
