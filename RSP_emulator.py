@@ -1,15 +1,42 @@
-#RSP_emulator ver a0.1
+#RSP_emulator ver a0.2
+import random
 
-opciones = int(input("\nElige una opcion:\n\n1. Piedra \n2. Papel \n3. Tijeras\n"))
+ia_op= ["piedra", "papel", "tijeras"]#opciones de la IA
+ia= (random.choice(ia_op))#tomamos la eleccion randomm de la IA
 
-if opciones == 1:
-	piedra = "piedra"
-	print("{} le gana a tijeras pero pierde contra papel".format(piedra))
-elif opciones == 2:
-	papel = "papel"
-	print("{} le gana a piedra pero pierde contra tijeras".format(papel))
-elif opciones == 3:
-	tijeras = "tijeras"
-	print("{} le gana a papel pero pierde contra piedra".format(tijeras))
+play = input("¿Deseas Jugar vs IA?\n\ny=(YES)\nn=(NO)\n")
+
+if play == "y":
+	opciones= int(input("Elige una opcion:\n\n1.Piedra\n2.Papel.\n3.Tijera\n"))
+	
+	if opciones == 1:
+		piedra = "piedra"
+
+		if ia == "papel":
+			print("Ha ganado con la maquina con{} y tu tenias {}".format(ia, piedra))
+		elif ia == "piedra":
+			print("has empatado con {} y la maquina tenia {}".format(piedra, ia))
+		else:
+			print("Has ganado con {} y la maquina tenia {}".format(piedra, ia))
+	elif opciones == 2:
+		papel = "papel"
+		if ia == "tijeras":
+			print("Ha ganado la maquina con{} y tu tenias {}".format(ia, papel))
+		elif ia == "papel":
+			print("Has empatado con {} y la maquina tenia {}".format(papel, ia))
+		else:
+			print("Has ganado con {} y la maquina tenia {}".format(papel, ia))
+	elif opciones == 3:
+		tijeras = "tijeras"
+		if ia == "piedra":
+			print("Ha ganado la maquina con {} y tu tenias {}".format(ia, tijeras))
+		elif ia == "tijeras":
+			print("Has empatado con {} y la maquina tenia {}".format(tijeras, ia))
+		else:
+			print("Has ganado con {} y la maquina tenia {}".format(tijeras, ia))
+	else:
+		print("Opcion invalida debes leer")
+elif play == "n":
+	print("¿Pa que ejecutas el juego si no quieres jugar?")
 else:
-	print("opcion no valida")
+	print("Opcion invalida, compra lentes.")
